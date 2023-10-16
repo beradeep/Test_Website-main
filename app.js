@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const ejs = re
 
 const port = process.env.PORT || 3000
 
@@ -58,7 +57,7 @@ var Collection1 = mongoose.model("Collection 1", schema);
 app.post('/', (req, res)=>{
     var data = new Collection1(req.body);
     data.save().then(()=>{
-        res.status(200).end(home);
+        res.status(200).render('home.html');
     }).catch(()=>{
         res.send("The data has not been send");
     });
