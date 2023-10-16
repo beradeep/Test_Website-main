@@ -6,10 +6,10 @@ const port = process.env.PORT || 3000
 app.set('/test_website');
 app.use(express.urlencoded());
 
-app.set('view engine', 'html');
+// app.set('view engine', 'html');
 
 app.get("/", (req,res)=>{
-    res.status(200).render('home.html');
+    res.status(200).sendFile('home.html');
 });
 app.listen(port, ()=>{
     console.log(`The server is live at http://${port}`);
@@ -27,7 +27,7 @@ app.post('/', (req, res)=>{
     The addrsss is ${address}`;
 
     fs.writeFileSync("output.txt", output);
-    res.status(200).render('home.html');
+    res.status(200).sendFile('home.html');
 });
 
 const server = "127.0.0.1:27017";
@@ -57,7 +57,7 @@ var Collection1 = mongoose.model("Collection 1", schema);
 app.post('/', (req, res)=>{
     var data = new Collection1(req.body);
     data.save().then(()=>{
-        res.status(200).render('home.html');
+        res.status(200).sendFile('home.html');
     }).catch(()=>{
         res.send("The data has not been send");
     });
