@@ -14,7 +14,7 @@ app.get("/", (req,res)=>{
     res.status(200).end(home);
 });
 app.listen(port, ()=>{
-    console.log(`The server is live at http://:${port}`);
+    console.log(`The server is live at http://${port}`);
 });
 
 // app.post('/', (req, res)=>{
