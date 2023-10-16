@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const ejs = re
+
 const port = process.env.PORT || 3000
 
 app.set('/test_website');
@@ -8,26 +10,26 @@ app.use(express.urlencoded());
 app.set('view engine', 'html');
 
 app.get("/", (req,res)=>{
-    res.status(200).render('home');
+    res.status(200).render('home.html');
 });
 app.listen(port, ()=>{
     console.log(`The server is live at http://${port}`);
 });
 
-// app.post('/', (req, res)=>{
-//     let name = req.body.name;
-//     let number = req.body.age;
-//     let email = req.body.email;
-//     let address = req.body.address;
+app.post('/', (req, res)=>{
+    let name = req.body.name;
+    let number = req.body.age;
+    let email = req.body.email;
+    let address = req.body.address;
     
-//     let output = `The name is ${name}
-//     The age is ${number}
-//     The email is ${email}
-//     The addrsss is ${address}`;
+    let output = `The name is ${name}
+    The age is ${number}
+    The email is ${email}
+    The addrsss is ${address}`;
 
-//     fs.writeFileSync("output.txt", output);
-//     res.status(200).end(home);
-// });
+    fs.writeFileSync("output.txt", output);
+    res.status(200).render('home.html');
+});
 
 const server = "127.0.0.1:27017";
 const database = "Test_Database";
