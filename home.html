@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website_test</title>
+</head>
+<style>
+    .container h3{
+        text-align: center;
+    }
+    .inputs{
+        display: block;
+        margin: 12px auto;
+        padding:12px;
+        width:200px;
+    }
+    .btn{
+        display: block;
+        margin: 12px auto;
+        width:100px;
+        border: 2px solid red;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    .btn:hover{
+        color:white;
+        background-color: black;
+    }
+</style>
+<body>
+    <div class="container">
+        <h3>Enter your details</h3>
+        <form action="/", method="post">
+            <input type="text" class="inputs" name="name" placeholder="Enter your name">
+            <input type="number" class="inputs" name="age" placeholder="Enter your age">
+            <input type="email" class="inputs" name="email" placeholder="Enter your email">
+            <input type="text" class="inputs" name="address" placeholder="Enter your address">
+            <button class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
