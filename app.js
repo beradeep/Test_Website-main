@@ -28,7 +28,7 @@ app.post('/', (req, res)=>{
     The email is ${email}
     The addrsss is ${address}`;
 
-    fs.writeFileSync("output.txt", output);
+    // fs.writeFileSync("output.txt", output);
     res.status(200).sendFile(__dirname+'/home.html');
 });
 
